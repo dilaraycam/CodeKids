@@ -7,9 +7,13 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.brown[300],
-      child: child,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        padding: EdgeInsets.all(8),
+        color: Colors.brown[300],
+        child: child,
+      ),
     );
   }
 }
