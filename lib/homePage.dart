@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'button.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,16 +12,28 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Column(children: [
         Expanded(
-          flex: 2,
+          flex: 4,
           child: Container(
             color: Colors.blue,
           ),
         ),
         Expanded(
-          flex: 3,
+          flex: 1,
           child: Container(
-            color: Colors.brown,
-          ),
+              color: Colors.brown,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MyButton(
+                      child: Icon(Icons.arrow_back),
+                    ),
+                    MyButton(
+                      child: Icon(Icons.arrow_upward),
+                    ),
+                    MyButton(
+                      child: Icon(Icons.arrow_forward),
+                    )
+                  ])),
         ),
       ]),
     );
