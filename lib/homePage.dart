@@ -14,8 +14,10 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           flex: 4,
           child: Container(
-            color: Colors.blue,
-          ),
+              color: Colors.blue,
+              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Image.asset('assets/images/Fly (2).png'),
+              ])),
         ),
         Expanded(
           flex: 1,
