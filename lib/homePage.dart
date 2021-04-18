@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'button.dart';
+import 'plane.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,6 +10,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static double planeX = -1;
+  static double planeY = 0.8;
+  double time = 0;
+  double height = 0;
+  double initialHeight = planeY;
+
+  void preUp() {
+    time = 0;
+    initialHeight = planeY;
+  }
+
+  void up() {
+    preUp();
+    Timer.periodic(Duration(milliseconds: 50), (timer) {
+      time += 0.005;
+      height = -4.9 * time * time * 5 * time;
+
+      if (initialHeight - height < -1) {
+        planeY = -0.8;
+      }
+
+      setState(() {
+        planeY = -0.8;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,18 +45,11 @@ class _HomePageState extends State<HomePage> {
           flex: 4,
           child: Container(
               color: Colors.blue,
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Image.asset(
-                  'assets/images/Fly (2).png',
-                  height: 100,
-                  width: 100,
-                ),
-                Image.asset(
-                  'assets/images/BadCloud.png',
-                  height: 60,
-                  width: 60,
-                ),
-              ])),
+              child: AnimatedContainer(
+                alignment: Alignment(planeX, planeY),
+                duration: Duration(milliseconds: 0),
+                child: MyPlane(),
+              )),
         ),
         Expanded(
           flex: 1,
@@ -40,6 +63,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     MyButton(
                       child: Icon(Icons.arrow_upward),
+                      function: up,
                     ),
                     MyButton(
                       child: Icon(Icons.arrow_forward),
