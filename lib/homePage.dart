@@ -16,7 +16,16 @@ class _HomePageState extends State<HomePage> {
           child: Container(
               color: Colors.blue,
               child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Image.asset('assets/images/Fly (2).png'),
+                Image.asset(
+                  'assets/images/Fly (2).png',
+                  height: 100,
+                  width: 100,
+                ),
+                Image.asset(
+                  'assets/images/BadCloud.png',
+                  height: 60,
+                  width: 60,
+                ),
               ])),
         ),
         Expanded(
