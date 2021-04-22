@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'button.dart';
 import 'plane.dart';
 import 'dragBox.dart';
+import 'circleButton.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -70,6 +71,12 @@ class _HomePageState extends State<HomePage> {
                       child: Icon(Icons.arrow_forward),
                     ),
                     DragBox(),
+                    CircleButton(
+                      child: Text(
+                        'RUN',
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
                   ])),
         ),
       ]),
