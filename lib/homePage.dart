@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'button.dart';
 import 'plane.dart';
+import 'dragBox.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -67,7 +68,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     MyButton(
                       child: Icon(Icons.arrow_forward),
-                    )
+                    ),
+                    DragBox(),
                   ])),
         ),
       ]),
