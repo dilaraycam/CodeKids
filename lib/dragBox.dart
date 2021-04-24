@@ -7,7 +7,7 @@ class DragBox extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomRight,
       child: Container(
-          width: 400,
+          width: 350,
           height: 100,
           color: Colors.green,
           child:
@@ -15,18 +15,21 @@ class DragBox extends StatelessWidget {
             MyButton(
               child: Text(
                 '  1  ',
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
             MyButton(
               child: Text(
                 '  2  ',
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
             MyButton(
                 child: Text(
               '  3  ',
+              style: TextStyle(fontWeight: FontWeight.bold),
               textDirection: TextDirection.ltr,
             ))
           ])),

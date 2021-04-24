@@ -1,10 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'button.dart';
-import 'plane.dart';
-import 'dragBox.dart';
-import 'circleButton.dart';
+import 'gameBox.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,72 +7,50 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static double planeX = -1;
-  static double planeY = 0.8;
-  double time = 0;
-  double height = 0;
-  double initialHeight = planeY;
-
-  void preUp() {
-    time = 0;
-    initialHeight = planeY;
-  }
-
-  void up() {
-    preUp();
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
-      time += 0.005;
-      height = -4.9 * time * time * 5 * time;
-
-      if (initialHeight - height < -1) {
-        planeY = -0.8;
-      }
-
-      setState(() {
-        planeY = -0.8;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
         Expanded(
-          flex: 4,
+          flex: 1,
+          child: Container(
+            color: Colors.yellow,
+            alignment: Alignment.center,
+            child: Text(
+              'CHOOSE YOUR GAME !!!',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.black),
+              textDirection: TextDirection.ltr,
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 2,
           child: Container(
               color: Colors.blue,
-              child: AnimatedContainer(
-                alignment: Alignment(planeX, planeY),
-                duration: Duration(milliseconds: 0),
-                child: MyPlane(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GameBox(gameText: 'BASIC CODING', textColor: Colors.red),
+                  GameBox(gameText: 'SEQUENCES', textColor: Colors.grey),
+                  GameBox(gameText: 'LOOPS', textColor: Colors.green),
+                ],
               )),
         ),
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Container(
-              color: Colors.brown,
+              color: Colors.blue,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    MyButton(
-                      child: Icon(Icons.arrow_back),
-                    ),
-                    MyButton(
-                      child: Icon(Icons.arrow_upward),
-                      function: up,
-                    ),
-                    MyButton(
-                      child: Icon(Icons.arrow_forward),
-                    ),
-                    DragBox(),
-                    CircleButton(
-                      child: Text(
-                        'RUN',
-                        textDirection: TextDirection.ltr,
-                      ),
-                    ),
-                  ])),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GameBox(gameText: 'FUNCTIONS', textColor: Colors.purple),
+                  GameBox(gameText: 'ARRAYS', textColor: Colors.pink),
+                  GameBox(gameText: 'DEBUGGING', textColor: Colors.orange),
+                ],
+              )),
         ),
       ]),
     );
