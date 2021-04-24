@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'gameBox.dart';
+import 'basicGame.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,7 +34,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GameBox(gameText: 'BASIC CODING', textColor: Colors.red),
+                  GameBox(
+                      gameText: 'BASIC CODING',
+                      textColor: Colors.red,
+                      function: BasicGame()),
                   GameBox(gameText: 'SEQUENCES', textColor: Colors.grey),
                   GameBox(gameText: 'LOOPS', textColor: Colors.green),
                 ],
