@@ -44,7 +44,12 @@ class _BasicGameState extends State<BasicGame> {
     return Scaffold(
       body: Column(children: [
         Expanded(
-          flex: 4,
+          flex: 1,
+          child: Container(
+              color: Colors.blue, child: Row(children: [BackButton()])),
+        ),
+        Expanded(
+          flex: 3,
           child: Container(
               color: Colors.blue,
               child: AnimatedContainer(
