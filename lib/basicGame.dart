@@ -46,7 +46,6 @@ class _BasicGameState extends State<BasicGame> {
         Expanded(
           flex: 4,
           child: Container(
-              //child:BackButton(),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/images/sky.jpg"),
@@ -57,6 +56,7 @@ class _BasicGameState extends State<BasicGame> {
                 children: [
                   BackButton(),
                   MyPlane(planeX: planeX, planeY: planeY),
+                  Image.asset('assets/images/clouds.png'),
                 ],
               )),
         ),
