@@ -63,7 +63,7 @@ class _BasicGameState extends State<BasicGame> {
         Expanded(
           flex: 1,
           child: Container(
-              color: Colors.brown,
+              color: Colors.orange,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

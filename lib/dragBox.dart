@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'button.dart';
+import 'targetDraggable.dart';
 
 class DragBox extends StatelessWidget {
   @override
@@ -12,21 +13,21 @@ class DragBox extends StatelessWidget {
           color: Colors.green,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            MyButton(
+            TargetButton(
               child: Text(
                 '  1  ',
                 style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
-            MyButton(
+            TargetButton(
               child: Text(
                 '  2  ',
                 style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
-            MyButton(
+            TargetButton(
                 child: Text(
               '  3  ',
               style: TextStyle(fontWeight: FontWeight.bold),

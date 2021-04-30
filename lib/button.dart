@@ -11,22 +11,21 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
         onTap: function,
         child: Draggable(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
+          axis: Axis.horizontal,
+          child: CircleAvatar(
+            radius: 20,
             child: Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.brown[300],
               child: child,
             ),
           ),
-          feedback: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
+          feedback: CircleAvatar(
+            radius: 20,
             child: Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.brown[300],
               child: child,
             ),
           ),
+          //childWhenDragging: Container(),
+          data: ["Back", "Upward", "Forward"],
         ));
   }
 }
