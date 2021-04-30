@@ -9,15 +9,24 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: function,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: Container(
-          padding: EdgeInsets.all(8),
-          color: Colors.brown[300],
-          child: child,
-        ),
-      ),
-    );
+        onTap: function,
+        child: Draggable(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              padding: EdgeInsets.all(8),
+              color: Colors.brown[300],
+              child: child,
+            ),
+          ),
+          feedback: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              padding: EdgeInsets.all(8),
+              color: Colors.brown[300],
+              child: child,
+            ),
+          ),
+        ));
   }
 }
