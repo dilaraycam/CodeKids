@@ -30,29 +30,27 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           flex: 2,
           child: Container(
-              color: Colors.blue,
+              color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GameBox(
-                      gameText: 'BASIC CODING',
-                      textColor: Colors.red,
-                      function: BasicGame()),
-                  GameBox(gameText: 'SEQUENCES', textColor: Colors.grey),
-                  GameBox(gameText: 'LOOPS', textColor: Colors.green),
+                      imageUrl: 'assets/images/boy.jpg', function: BasicGame()),
+                  GameBox(imageUrl: 'assets/images/boy1.jpg'),
+                  GameBox(imageUrl: 'assets/images/boy2.jpg'),
                 ],
               )),
         ),
         Expanded(
           flex: 2,
           child: Container(
-              color: Colors.blue,
+              color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GameBox(gameText: 'FUNCTIONS', textColor: Colors.purple),
-                  GameBox(gameText: 'ARRAYS', textColor: Colors.pink),
-                  GameBox(gameText: 'DEBUGGING', textColor: Colors.orange),
+                  GameBox(imageUrl: 'assets/images/boy3.jpg'),
+                  GameBox(imageUrl: 'assets/images/boy4.jpg'),
+                  GameBox(imageUrl: 'assets/images/boy5.jpg'),
                 ],
               )),
         ),

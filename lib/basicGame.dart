@@ -24,7 +24,7 @@ class _BasicGameState extends State<BasicGame> {
   void up() {
     preUp();
     Timer.periodic(Duration(milliseconds: 50), (timer) {
-      time += 0.005;
+      time += 0.05;
       height = -4.9 * time * time * 5 * time;
 
       if (initialHeight - height < -1) {
@@ -34,6 +34,18 @@ class _BasicGameState extends State<BasicGame> {
       setState(() {
         planeY = -0.8;
       });
+    });
+  }
+
+  void moveRight() {
+    setState(() {
+      planeX += 0.8;
+    });
+  }
+
+  void moveLeft() {
+    setState(() {
+      planeX -= 0.02;
     });
   }
 
@@ -67,6 +79,7 @@ class _BasicGameState extends State<BasicGame> {
                   children: [
                     MyButton(
                       child: Icon(Icons.arrow_back),
+                      function: moveLeft,
                     ),
                     MyButton(
                       child: Icon(Icons.arrow_upward),
@@ -74,6 +87,7 @@ class _BasicGameState extends State<BasicGame> {
                     ),
                     MyButton(
                       child: Icon(Icons.arrow_forward),
+                      function: moveRight,
                     ),
                     DragBox(),
                     CircleAvatar(
