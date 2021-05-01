@@ -1,10 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'button.dart';
 import 'plane.dart';
 import 'dragBox.dart';
-import 'circleButton.dart';
 
 class BasicGame extends StatefulWidget {
   @override
@@ -78,11 +76,15 @@ class _BasicGameState extends State<BasicGame> {
                       child: Icon(Icons.arrow_forward),
                     ),
                     DragBox(),
-                    CircleButton(
-                      child: Text(
-                        'RUN',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                        textDirection: TextDirection.ltr,
+                    CircleAvatar(
+                      backgroundColor: Colors.red,
+                      radius: 27,
+                      child: Container(
+                        child: Text(
+                          'RUN',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          textDirection: TextDirection.ltr,
+                        ),
                       ),
                     ),
                   ])),
