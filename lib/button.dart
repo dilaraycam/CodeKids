@@ -25,7 +25,7 @@ class MyButton extends StatelessWidget {
             ),
           ),
           //childWhenDragging: Container(),
-          data: ["Back", "Upward", "Forward"],
+          data: child,
         ));
   }
 }

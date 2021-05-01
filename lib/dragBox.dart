@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'button.dart';
 import 'targetDraggable.dart';
 
 class DragBox extends StatelessWidget {
@@ -14,21 +13,21 @@ class DragBox extends StatelessWidget {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             TargetButton(
-              child: Text(
+              number: Text(
                 '  1  ',
                 style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
             TargetButton(
-              child: Text(
+              number: Text(
                 '  2  ',
                 style: TextStyle(fontWeight: FontWeight.bold),
                 textDirection: TextDirection.ltr,
               ),
             ),
             TargetButton(
-                child: Text(
+                number: Text(
               '  3  ',
               style: TextStyle(fontWeight: FontWeight.bold),
               textDirection: TextDirection.ltr,

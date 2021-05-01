@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TargetButton extends StatelessWidget {
-  final child;
+enum ButtonType { upward, forward, backward }
 
-  TargetButton({this.child});
+class TargetButton extends StatelessWidget {
+  var number;
+  final ButtonType type;
+
+  TargetButton({this.number, this.type});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,14 +15,21 @@ class TargetButton extends StatelessWidget {
       radius: 20,
       backgroundColor: Theme.of(context).highlightColor,
       child: DragTarget(
-        builder: (context, List<int> candidateData, rejectedData) {
-          print(candidateData);
+        builder: (context, candidateData, rejectedData) {
           return Container(
-            child: child,
+            child: number,
           );
         },
         onWillAccept: (data) {
           return true;
+        },
+        onAccept: (data) {
+          number = CircleAvatar(
+            radius: 20,
+            child: Container(
+              child: data,
+            ),
+          );
         },
       ),
     ));
