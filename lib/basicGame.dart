@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'button.dart';
 import 'plane.dart';
 import 'dragBox.dart';
+import 'clouds.dart';
 
 class BasicGame extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class _BasicGameState extends State<BasicGame> {
 
   void moveRight() {
     setState(() {
-      planeX += 0.8;
+      planeX += 1;
     });
   }
 
@@ -54,22 +55,22 @@ class _BasicGameState extends State<BasicGame> {
     return Scaffold(
       body: Column(children: [
         Expanded(
-          flex: 4,
-          child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/sky.jpg"),
-                  fit: BoxFit.cover,
+            flex: 4,
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/sky.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: MyPlane(planeX: planeX, planeY: planeY),
                 ),
-              ),
-              child: Row(
-                children: [
-                  BackButton(),
-                  MyPlane(planeX: planeX, planeY: planeY),
-                  Image.asset('assets/images/clouds.png'),
-                ],
-              )),
-        ),
+                Clouds(),
+                BackButton(),
+              ],
+            )),
         Expanded(
           flex: 1,
           child: Container(
