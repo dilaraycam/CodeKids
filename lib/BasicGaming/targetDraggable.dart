@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-enum ButtonType { upward, forward, backward }
-
 class TargetButton extends StatelessWidget {
   var number;
-  final ButtonType type;
 
-  TargetButton({this.number, this.type});
+  TargetButton({this.number});
 
   @override
   Widget build(BuildContext context) {

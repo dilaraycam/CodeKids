@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'gameBox.dart';
-import 'basicGame.dart';
+import 'BasicGaming/gameBox.dart';
+import 'BasicGaming/basicGame.dart';
 
 class HomePage extends StatefulWidget {
   @override

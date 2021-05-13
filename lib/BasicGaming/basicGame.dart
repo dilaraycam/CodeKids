@@ -4,6 +4,7 @@ import 'button.dart';
 import 'plane.dart';
 import 'dragBox.dart';
 import 'clouds.dart';
+import 'runButton.dart';
 
 class BasicGame extends StatefulWidget {
   @override
@@ -79,29 +80,19 @@ class _BasicGameState extends State<BasicGame> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MyButton(
-                      child: Icon(Icons.arrow_back),
+                      arrow: Icon(Icons.arrow_back),
                       function: moveLeft,
                     ),
                     MyButton(
-                      child: Icon(Icons.arrow_upward),
+                      arrow: Icon(Icons.arrow_upward),
                       function: up,
                     ),
                     MyButton(
-                      child: Icon(Icons.arrow_forward),
+                      arrow: Icon(Icons.arrow_forward),
                       function: moveRight,
                     ),
                     DragBox(),
-                    CircleAvatar(
-                      backgroundColor: Colors.red,
-                      radius: 27,
-                      child: Container(
-                        child: Text(
-                          'RUN',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          textDirection: TextDirection.ltr,
-                        ),
-                      ),
-                    ),
+                    RunButton(),
                   ])),
         ),
       ]),

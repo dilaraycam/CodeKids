@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  final child;
+  final arrow;
   final function;
 
-  MyButton({this.child, this.function});
+  MyButton({this.arrow, this.function});
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +15,17 @@ class MyButton extends StatelessWidget {
           child: CircleAvatar(
             radius: 20,
             child: Container(
-              child: child,
+              child: arrow,
             ),
           ),
           feedback: CircleAvatar(
             radius: 20,
             child: Container(
-              child: child,
+              child: arrow,
             ),
           ),
           //childWhenDragging: Container(),
-          data: child,
+          data: arrow,
         ));
   }
 }
