@@ -1,17 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'button.dart';
-import 'plane.dart';
-import 'dragBox.dart';
-import 'clouds.dart';
-import 'runButton.dart';
+import 'package:codekids/BasicGaming/plane.dart';
+import 'package:codekids/BasicGaming/dragBox.dart';
+import 'package:codekids/BasicGaming/clouds.dart';
+import 'package:codekids/BasicGaming/runButton.dart';
+import 'package:codekids/BasicGaming/button.dart';
+import 'dragBoxLoops.dart';
 
-class BasicGame extends StatefulWidget {
+class LoopsGame extends StatefulWidget {
   @override
-  _BasicGameState createState() => _BasicGameState();
+  _LoopsGameState createState() => _LoopsGameState();
 }
 
-class _BasicGameState extends State<BasicGame> {
+class _LoopsGameState extends State<LoopsGame> {
   static double planeX = -1;
   static double planeY = 0.8;
   double time = 0;
@@ -51,36 +52,64 @@ class _BasicGameState extends State<BasicGame> {
     });
   }
 
-  void allMove() {}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
         Expanded(
             flex: 4,
-            child: Stack(
+            child: Row(children: [
+              Expanded(
+                  flex: 4,
+                  child: Container(
+                      child: Column(
+                    children: [
+                      Container(
+                        height: 300.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/background1.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: MyPlane(
+                            planeX: planeX,
+                            planeY: planeY,
+                            assetUrl: 'assets/images/bat.png'),
+                      ),
+                      Clouds(),
+                      BackButton(),
+                    ],
+                  ))),
+              Expanded(
+                  flex: 1,
+                  child: Column(children: [
+                    DragBoxLoops(boxcolor: Colors.black),
+                  ]))
+            ])
+            /*child: Stack(
               children: [
                 Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/images/sky.jpg"),
+                      image: AssetImage("assets/images/background1.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
                   child: MyPlane(
                       planeX: planeX,
                       planeY: planeY,
-                      assetUrl: 'assets/images/Fly (2).png'),
+                      assetUrl: 'assets/images/bat.png'),
                 ),
-                Clouds(),
+                //Clouds(),
                 BackButton(),
               ],
-            )),
+            )*/
+            ),
         Expanded(
           flex: 1,
           child: Container(
-              color: Colors.orange,
+              color: Colors.grey,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -96,11 +125,7 @@ class _BasicGameState extends State<BasicGame> {
                       arrow: Icon(Icons.arrow_forward),
                       function: moveRight,
                     ),
-                    DragBox(boxcolor: Colors.green),
-                    RunButton(
-                        function1: moveLeft,
-                        function2: up,
-                        function3: moveRight),
+                    RunButton(),
                   ])),
         ),
       ]),

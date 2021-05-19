@@ -11,7 +11,7 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
         onTap: function,
         child: Draggable(
-          axis: Axis.horizontal,
+          //axis: Axis.horizontal,
           child: CircleAvatar(
             radius: 20,
             child: Container(

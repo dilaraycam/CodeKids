@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class MyPlane extends StatelessWidget {
   final planeX;
   final planeY;
+  final assetUrl;
 
-  MyPlane({this.planeX, this.planeY});
+  MyPlane({this.planeX, this.planeY, this.assetUrl});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +13,7 @@ class MyPlane extends StatelessWidget {
       alignment: Alignment(planeX, planeY),
       duration: Duration(milliseconds: 0),
       child: Image.asset(
-        'assets/images/Fly (2).png',
+        assetUrl,
         width: 100,
         height: 100,
       ),

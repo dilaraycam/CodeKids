@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'BasicGaming/gameBox.dart';
 import 'BasicGaming/basicGame.dart';
+import 'Loops/LoopsGame.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -37,7 +38,9 @@ class _HomePageState extends State<HomePage> {
                   GameBox(
                       imageUrl: 'assets/images/boy.jpg', function: BasicGame()),
                   GameBox(imageUrl: 'assets/images/boy1.jpg'),
-                  GameBox(imageUrl: 'assets/images/boy2.jpg'),
+                  GameBox(
+                      imageUrl: 'assets/images/boy2.jpg',
+                      function: LoopsGame()),
                 ],
               )),
         ),

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'targetDraggable.dart';
 
 class DragBox extends StatelessWidget {
+  final boxcolor;
+
+  DragBox({this.boxcolor});
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -9,7 +13,7 @@ class DragBox extends StatelessWidget {
       child: Container(
           width: 350,
           height: 100,
-          color: Colors.green,
+          color: boxcolor,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             TargetButton(
