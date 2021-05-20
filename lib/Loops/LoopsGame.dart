@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:codekids/BasicGaming/plane.dart';
-import 'package:codekids/BasicGaming/dragBox.dart';
 import 'package:codekids/BasicGaming/clouds.dart';
 import 'package:codekids/BasicGaming/runButton.dart';
 import 'package:codekids/BasicGaming/button.dart';
 import 'dragBoxLoops.dart';
+import 'repeat.dart';
 
 class LoopsGame extends StatefulWidget {
   @override
@@ -61,11 +61,9 @@ class _LoopsGameState extends State<LoopsGame> {
             child: Row(children: [
               Expanded(
                   flex: 4,
-                  child: Container(
-                      child: Column(
+                  child: Stack(
                     children: [
                       Container(
-                        height: 300.0,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/images/background1.jpg"),
@@ -80,32 +78,14 @@ class _LoopsGameState extends State<LoopsGame> {
                       Clouds(),
                       BackButton(),
                     ],
-                  ))),
+                  )),
               Expanded(
                   flex: 1,
                   child: Column(children: [
                     DragBoxLoops(boxcolor: Colors.black),
+                    Repeat(boxcolor: Colors.white),
                   ]))
-            ])
-            /*child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/background1.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: MyPlane(
-                      planeX: planeX,
-                      planeY: planeY,
-                      assetUrl: 'assets/images/bat.png'),
-                ),
-                //Clouds(),
-                BackButton(),
-              ],
-            )*/
-            ),
+            ])),
         Expanded(
           flex: 1,
           child: Container(
@@ -124,6 +104,9 @@ class _LoopsGameState extends State<LoopsGame> {
                     MyButton(
                       arrow: Icon(Icons.arrow_forward),
                       function: moveRight,
+                    ),
+                    MyButton(
+                      arrow: Icon(Icons.call_missed_outgoing),
                     ),
                     RunButton(),
                   ])),
