@@ -1,18 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:codekids/BasicGaming/plane.dart';
-import 'package:codekids/BasicGaming/clouds.dart';
 import 'package:codekids/BasicGaming/runButton.dart';
 import 'package:codekids/BasicGaming/button.dart';
-import 'dragBoxLoops.dart';
-import 'repeat.dart';
+import 'package:codekids/Loops/dragBoxLoops.dart';
+import 'package:codekids/Loops/repeat.dart';
 
-class LoopsGame extends StatefulWidget {
+class FunctionsGame extends StatefulWidget {
   @override
-  _LoopsGameState createState() => _LoopsGameState();
+  _FunctionsGameState createState() => _FunctionsGameState();
 }
 
-class _LoopsGameState extends State<LoopsGame> {
+class _FunctionsGameState extends State<FunctionsGame> {
   static double planeX = -1;
   static double planeY = 0.8;
   double time = 0;
@@ -66,18 +65,18 @@ class _LoopsGameState extends State<LoopsGame> {
                       Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/images/background1.jpg"),
+                            image: AssetImage("assets/images/background2.jpg"),
                             fit: BoxFit.cover,
                           ),
                         ),
                         child: MyPlane(
                             planeX: planeX,
                             planeY: planeY,
-                            assetUrl: 'assets/images/bat.png'),
+                            assetUrl: 'assets/images/angel.png'),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(100, 0, 0, 0),
-                        child: Image.asset('assets/images/banana.png'),
+                        child: Image.asset('assets/images/sun.png'),
                       ),
                       BackButton(),
                     ],
@@ -85,14 +84,14 @@ class _LoopsGameState extends State<LoopsGame> {
               Expanded(
                   flex: 1,
                   child: Column(children: [
-                    DragBoxLoops(boxcolor: Colors.black),
-                    Repeat(boxcolor: Colors.white),
+                    DragBoxLoops(boxcolor: Colors.orange),
+                    Repeat(boxcolor: Colors.brown),
                   ]))
             ])),
         Expanded(
           flex: 1,
           child: Container(
-              color: Colors.grey,
+              color: Colors.green,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

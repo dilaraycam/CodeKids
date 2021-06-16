@@ -12,11 +12,16 @@ class Repeat extends StatelessWidget {
       alignment: Alignment.bottomRight,
       child: Container(
           width: 350,
-          height: 120,
+          height: 138,
           color: boxcolor,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                Text(
+                  '  How many times?  ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  textDirection: TextDirection.ltr,
+                ),
                 TargetButton(
                   number: Text(
                     '  1  ',
@@ -25,15 +30,8 @@ class Repeat extends StatelessWidget {
                   ),
                 ),
                 TargetButton(
-                  number: Text(
-                    '  2  ',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                    textDirection: TextDirection.ltr,
-                  ),
-                ),
-                TargetButton(
                     number: Text(
-                  '  3  ',
+                  '  2  ',
                   style: TextStyle(fontWeight: FontWeight.bold),
                   textDirection: TextDirection.ltr,
                 ))

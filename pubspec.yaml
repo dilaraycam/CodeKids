@@ -56,6 +56,10 @@ flutter:
     - 'assets/images/boy5.jpg'
     - 'assets/images/background1.jpg'
     - 'assets/images/bat.png'
+    - 'assets/images/background2.jpg'
+    - assets/images/angel.png
+    - assets/images/sun.png
+    - assets/images/banana.png
    
 
   # The following line ensures that the Material Icons font is

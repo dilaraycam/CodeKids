@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'BasicGaming/gameBox.dart';
 import 'BasicGaming/basicGame.dart';
 import 'Loops/LoopsGame.dart';
+import 'Functions/functionsGame.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -51,7 +52,9 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GameBox(imageUrl: 'assets/images/boy3.jpg'),
+                  GameBox(
+                      imageUrl: 'assets/images/boy3.jpg',
+                      function: FunctionsGame()),
                   GameBox(imageUrl: 'assets/images/boy4.jpg'),
                   GameBox(imageUrl: 'assets/images/boy5.jpg'),
                 ],
